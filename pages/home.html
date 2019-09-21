@@ -7,17 +7,25 @@
     <meta name="description" content="Searchable Symmetric Encryption Database">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='shortcut icon' type='image/x-icon' href='/static/img/favicon.ico' />
-    <link rel = "stylesheet" type = "text/css" href = "/static/css/index.css" />
+    <link rel = "stylesheet" type = "text/css" href = "/static/css/home.css" />
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
-
+  
     <!-- Crypto lib -->
     <script src="https://unpkg.com/node-forge@0.7.0/dist/forge.min.js"></script>
-
-    <script src="/static/js/storage.js"></script>
-    <script src="/static/js/keygen.js" defer></script>
   </head>
 
   <body>
-    
+    <header id="header-menu-bar">
+      <a href="/"><img src="/static/img/blackbox.png" alt="header-logo" id="header-logo"/></a>
+      <span>
+        <input class="header-search" placeholder="Fill in keyword and press enter to search">
+      </span>
+    </header>
+
+    <h2>HTML5 File Upload Progress Bar Tutorial</h2>
+    <form id="upload_form" enctype="multipart/form-data" method="post">
+      <input type="file" name="file1" id="file1"><br>
+      <input type="submit" value="Upload Image" name="submit">
+    </form>
   </body>
 </html>

@@ -2,4 +2,4 @@
 
 export PROJECT_DIR=$PWD
 export PAGE_DIR=$PROJECT_DIR/pages
-export INDEX_DIR=$PAGE_DIR/index.html
+export INDEX_DIR=$PAGE_DIR/home.html

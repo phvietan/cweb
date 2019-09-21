@@ -3,7 +3,7 @@
 
 #include <stdlib.h>
 
-#define PORT 8000
+#define PORT 5000
 #define PROJECT_DIR getenv("PROJECT_DIR")
 #define PAGE_DIR getenv("PAGE_DIR")
 #define INDEX_DIR getenv("INDEX_DIR")

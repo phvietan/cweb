@@ -47,6 +47,8 @@ int main(int argc, char * argv[], char * envp[]) {
         int pid = fork();
         if (pid == 0) {
             serverHandle(new_socket);
+            close(new_socket);
+            break;
         }
         close(new_socket);
     }
