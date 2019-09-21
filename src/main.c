@@ -44,7 +44,10 @@ int main(int argc, char * argv[], char * envp[]) {
             exit(EXIT_FAILURE);
         }
         printf("Receive request number #%d\n", ++k);
-        serverHandle(new_socket);
+        int pid = fork();
+        if (pid == 0) {
+            serverHandle(new_socket);
+        }
         close(new_socket);
     }
     

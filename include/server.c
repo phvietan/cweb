@@ -6,7 +6,7 @@ void serverHandle(int socket_fd) {
     
     recv(socket_fd, buffer, sizeof(buffer), 0);
 
-    char * f = getFileContent("./pages/index.html", errorCode);
+    char * f = getFileContent(INDEX_DIR, errorCode);
 
     char * header = (char *)malloc(80 * sizeof(char));
     sprintf(header, "HTTP/1.1 200 OK\r\nContent-Type: text/html\r\nContent-Length: %d\r\n", (int)strlen(f));
