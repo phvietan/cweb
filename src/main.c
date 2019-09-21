@@ -4,11 +4,10 @@
 #include <stdlib.h>
 #include <string.h>
 
+#include "../include/server.h"
 #include "../include/constants.h"
 
 typedef struct sockaddr_in sockaddr_in;
-
-char buffer[30000] = {0};
 
 int main(int argc, char * argv[], char * envp[]) {
     printf("Running on port %d\n", PORT);
@@ -30,12 +29,11 @@ int main(int argc, char * argv[], char * envp[]) {
         return 0;
     }
 
-    if (listen(server_fd, 100) < 0) { 
+    if (listen(server_fd, 500) < 0) { 
         perror("Cannot listen for connections"); 
         exit(EXIT_FAILURE); 
     }
 
-    char * hello = "Hello dude"; 
     int addrlen = sizeof(address);
 
     int k = 0;
@@ -45,10 +43,8 @@ int main(int argc, char * argv[], char * envp[]) {
             perror("In accept");
             exit(EXIT_FAILURE);
         }
-        recv(new_socket, buffer, 30000, 0);
-        printf("Receive %s\n", buffer);
-
         printf("Receive request number #%d\n", ++k);
+        serverHandle(new_socket);
         close(new_socket);
     }
     

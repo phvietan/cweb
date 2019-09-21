@@ -6,14 +6,29 @@ set(CMAKE_BINARY_DIR ${CMAKE_SOURCE_DIR}/build)
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR})
 set(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR}/include)
 
-include_directories(include)
-
-# Set src directory
+# Set PATH in project
 set(PROJECT_SRC ${PROJECT_SOURCE_DIR}/src)
+set(LIBRARY_PATH ${PROJECT_SOURCE_DIR}/include)
 
-# Src files
-add_executable(cweb ${PROJECT_SRC}/server.c)
+# Include lib
+add_library(
+    server STATIC
+    ${LIBRARY_PATH}/server.c
+    ${LIBRARY_PATH}/server.h
+)
 
+add_library(
+    fileServer STATIC
+    ${LIBRARY_PATH}/fileServer.c
+    ${LIBRARY_PATH}/fileServer.h
+)
+
+# Source files
+add_executable(main ${PROJECT_SRC}/main.c)
+
+target_link_libraries(main PRIVATE server fileServer)
+
+# Set CPACK
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
 include(CPack)
