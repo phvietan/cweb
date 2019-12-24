@@ -1,4 +1,4 @@
-#include "fileServer.h"
+#include "fileHandler.h"
 
 char * getFileContent(char * path, u_int16_t * errorCode) {
     int fd = open(path, O_RDONLY);

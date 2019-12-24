@@ -13,20 +13,20 @@ set(LIBRARY_PATH ${PROJECT_SOURCE_DIR}/include)
 # Include lib
 add_library(
     server STATIC
-    ${LIBRARY_PATH}/server.c
-    ${LIBRARY_PATH}/server.h
+    ${LIBRARY_PATH}/server/server.c
+    ${LIBRARY_PATH}/server/server.h
 )
 
 add_library(
-    fileServer STATIC
-    ${LIBRARY_PATH}/fileServer.c
-    ${LIBRARY_PATH}/fileServer.h
+    fileHandler STATIC
+    ${LIBRARY_PATH}/fileHandler/fileHandler.c
+    ${LIBRARY_PATH}/fileHandler/fileHandler.h
 )
 
 # Source files
 add_executable(main ${PROJECT_SRC}/main.c)
 
-target_link_libraries(main PRIVATE server fileServer)
+target_link_libraries(main PRIVATE server fileHandler)
 
 # Set CPACK
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})

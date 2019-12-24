@@ -6,8 +6,8 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <sys/socket.h>
-#include "fileServer.h"
-#include "constants.h"
+#include "../fileHandler/fileHandler.h"
+#include "../constants.h"
 
 void serverHandle(int socket_fd);
 
