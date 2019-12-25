@@ -3,7 +3,7 @@
 char * getFileContent(char * path, u_int16_t * errorCode) {
     int fd = open(path, O_RDONLY);
     if (fd == -1) {
-        printf("Cannot open file at %s\n", path);
+        perror("Cannot open file"); 
         *errorCode = 404;
     }
     else {

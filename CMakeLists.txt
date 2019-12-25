@@ -23,10 +23,16 @@ add_library(
     ${LIBRARY_PATH}/fileHandler/fileHandler.h
 )
 
+add_library(
+    httpParser STATIC
+    ${LIBRARY_PATH}/httpParser/httpParser.c
+    ${LIBRARY_PATH}/httpParser/httpParser.h
+)
+
 # Source files
 add_executable(main ${PROJECT_SRC}/main.c)
 
-target_link_libraries(main PRIVATE server fileHandler)
+target_link_libraries(main PRIVATE server fileHandler httpParser)
 
 # Set CPACK
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})

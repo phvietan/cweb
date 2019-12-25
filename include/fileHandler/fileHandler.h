@@ -1,5 +1,5 @@
-#ifndef FILE_SERVER_H
-#define FILE_SERVER 1
+#ifndef FILE_HANDLER_H
+#define FILE_HANDLER_H 1
 
 #include <stdbool.h>
 #include <sys/types.h>
